@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<title>wish wall project</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Saira+Condensed" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="<?php echo __PUBLIC__ ?>/css/jquery-ui.min.css">
+	<script type="text/javascript" src="<?php echo __PUBLIC__ ?>/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo __PUBLIC__ ?>/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo __PUBLIC__ ?>/js/index.js"></script>
+	<script type="text/javascript" src="<?php echo __PUBLIC__ ?>/js/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo __PUBLIC__ ?>/js/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo __PUBLIC__ ?>/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo __PUBLIC__ ?>/css/index.css">
+
+	<script type="text/javascript">
+	// need for js
+		var APP = '<?php echo __APP__ ?>';
+		var PUBLIC = '<?php echo __PUBLIC__ ?>';
+	</script>
+
+</head>
+<body>
+	<!-- header section-->
+	<div class="container-fluid header">
+		<div class="header-left col-xs-2">
+			<h1>Wish Wall</h1>
+			<span>Trun your wish to a star!</span>
+		</div>
+		<div class="header-middle col-xs-2">
+			<h3 class="btn-wish">Make a wish</h3>
+			<!-- make a wish form -->
+			<form action="javascript:;" method="post" name="wish-form" class="wish-form">
+				<lable>Subject<span class="glyphicon glyphicon-remove form-close" style="float:right"></lable>
+				<input type="text" class="form-control" placeholder="" name="title">
+				<lable>choose your avator</lable>
+				<ul class="avator">
+					<li><img src="<?php echo __PUBLIC__ ?>/images/1.jpg" class="img-responsive img-circle"></li>
+					<li><img src="<?php echo __PUBLIC__ ?>/images/2.jpg" class="img-responsive img-circle"></li>
+					<li><img src="<?php echo __PUBLIC__ ?>/images/4.jpg" class="img-responsive img-circle"></li>
+					<li><img src="<?php echo __PUBLIC__ ?>/images/5.jpg" class="img-responsive img-circle"></li>
+					<li><img src="<?php echo __PUBLIC__ ?>/images/6.jpg" class="img-responsive img-circle"></li>
+					<li><img src="<?php echo __PUBLIC__ ?>/images/7.jpg" class="img-responsive img-circle"></li>
+				</ul>
+				<div class="radio-list">
+					<input type="radio" name="tu" value="1.jpg" checked class="tu">
+					<input type="radio" name="tu" value="2.jpg" class="tu">
+					<input type="radio" name="tu" value="4.jpg" class="tu">
+					<input type="radio" name="tu" value="5.jpg" class="tu">
+					<input type="radio" name="tu" value="6.jpg" class="tu">
+					<input type="radio" name="tu" value="7.jpg" class="tu">
+				</div>
+				<textarea class="form-control" type="text" name="content" style="border-radius:2px"></textarea>
+				<button type="button" class="btn btn-primary btn-default btn-block btn-submit">submit</button>
+			</form>
+		</div>
+		<div class="header-right col-xs-2">
+			<h3>regist a account</h3>
+		</div>
+	</div>
+	<!-- black space section -->
+	<div class="space container-fluid">
+		<!-- star content -->
+		<?php foreach($this->db as $key => $v) : ?>
+		<ul class="list-group ul-wish">
+		  <li class="list-group-item list-group-item-danger drag"><?php echo "Your lucky number: " . $key ?><span class="glyphicon glyphicon-remove close" style="float:right"></span></li>
+		  <li class="list-group-item list-group-item-success"><?php echo "Subject: " . $v['title'] ?></li>
+		  <li class="list-group-item list-group-item-info"><span style="display:inline-block">Avator:</span><img style="width:20px;height:20px;display:inline-block" class="img-responsive img-circle" src="<?php echo __PUBLIC__ . '/images/' . $v['avator']?>"></li>
+		  <li class="list-group-item list-group-item-warning"><?php echo "Content: " . $v['content'] ?></li>
+		  <li class="list-group-item list-group-item-danger"><?php echo "Published on: " . date('l-Y/m/d-H:i:s',$v['time']) ?></li>
+		</ul>
+		<?php endforeach ?>
+	</div>
+</body>
+</html>

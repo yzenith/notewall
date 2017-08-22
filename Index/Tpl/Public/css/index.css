@@ -1,0 +1,100 @@
+		* {
+			padding: 0px;
+			margin: 0px;
+			font-size: 14px;
+			font-family: 'Saira Condensed', sans-serif;
+		}
+		body{
+			/*background-image:url("../images/background.jpg");*/
+		}
+		a{
+			text-decoration: none;
+		}
+		a::active{
+			border:1 solid lightblue;
+			bgcolor:none;
+		}
+		/*header css*/
+		.header{
+			background-color:white;
+		}
+		.header-left{
+			width: 25%;
+			padding:5px;
+			text-align:center;
+			display: inline-block;
+		}
+		.header-middle{
+			width: 25%;
+			padding:10px;
+			display: inline-block;
+		}
+		.header-middle h3{
+			float:right;
+		}
+		.header-middle .btn-wish{
+			border: 1px solid lightblue;
+			border-radius: 5px;
+			padding: 5px;
+			cursor: pointer;
+		}
+
+		.header-right {
+			width:50%;
+			padding:10px;
+			display:inline-block;
+			text-align: right;
+		}
+		/* wish-form css*/
+		.wish-form {
+			position:absolute;
+			top: 125%;
+			left: 50%;
+			padding: 15px;
+			border: 1px solid black;
+			background-color:white;
+			text-align: left;
+			border-radius: 5px;
+			display: none;
+			width: 120%;
+			z-index: 1;
+		}
+		.wish-form ul{
+			list-style: none;
+			width:100%
+		}
+		.wish-form ul li{
+			width: 20px;
+			height: 20px;
+			float:left;
+		}
+		.wish-form ul img {
+			width: 20px;
+			height: 20px;
+		}
+		.wish-form .radio-list{
+			width:100%;
+			padding: 1px;
+			float:left;
+		}
+		.wish-form .tu{
+			margin-right:5px;
+		}
+		.wish-form .form-control{
+			margin-bottom: 8px;
+		}
+		/*star css*/
+		.space{
+			width: 100%;
+			background-color: #b3b3ff;
+		}
+		.space .ul-wish{
+			width: 200px;
+			float: left;
+			margin: 10px;
+			cursor: pointer;
+			/*position: absolute;
+			left: 0px;
+			top: 20px;*/
+		}
+		

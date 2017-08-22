@@ -1,0 +1,19 @@
+*{
+	padding:0px;
+	margin: 0px;
+	font-size: 14px;
+	font-family: 'Saira Condensed', sans-serif;
+}
+body{
+	background-image: url("../images/background.jpg");
+}
+.login_form{
+	width: 30%;
+	height:30%;
+	box-shadow: 1px 1px 1px 1px lightblue;
+	margin: 200px auto;
+	padding: 15px;
+	background-color: lightblue;
+}
+.login_form .username{
+}
